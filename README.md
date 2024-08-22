@@ -1,4 +1,4 @@
-# Kaia.ai Docker images
+# Microros Docker images
 
 [Kaia.ai](https://kaiaai) is a platform for 3D-printable pet robots. Please sign up for an early launch invite [here](https://remake.ai).
 
@@ -48,68 +48,3 @@ git clone https://github.com/kaiaai/docker
 cd docker
 .\utils\build_all.cmd
 ```
-
-## Release history
-### 4/13/2024 (latest)
-- `docker pull kaiaai/kaiaai:humble-04-13-2024`
-- `docker pull kaiaai/kaiaai:iron-04-13-2024`
-- fixed a webserver script crash
-
-### 3/27/2024
-- `docker pull kaiaai/kaiaai:humble-03-27-2024`
-- `docker pull kaiaai/kaiaai:iron-03-27-2024`
-- changed naming from `kaiaai-ros-dev` to `kaiaai`
-- added Camsense X1 LiDAR
-
-### 3/15/2024
-- changed default image name to kaiaai/kaiaai from kaiaai/kaiaai-ros-dev
-- merged Dockerfiles into a single one
-- added kaiaai_python package
-- paused building/releasing kaia-ros image
-  - use kaia-ros-dev instead of kaia-ros
-- merged kaiaai into kaiaai-ros-dev
-- kaiaai_cli single main branch
-
-### 2/11/2024
-- `docker pull kaiaai/kaiaai-ros-dev:humble-02-11-2024`
-- `docker pull kaiaai/kaiaai-ros-dev:iron-02-11-2024`
-- [ROS2 kaiaai_telemetry package](https://github.com/kaiaai/kaiaai)
-  - added support for 3irobotix Delta-2A, Delta-2G laser distance scan sensors
-
-### 2/5/2024
-- `docker pull kaiaai/kaiaai-ros-dev:humble-02-05-2024`
-- `docker pull kaiaai/kaiaai-ros-dev:iron-02-05-2024`
-- added LiDAR/LDS laser distance scan sensors support
-  - YDLIDAR X3, X3-PRO
-  - Neato XV11
-  - SLAMTEC RPLIDAR A1
-- split kaiaai_telemetry config into default and custom
-  - `kaiaai/kaiaai_telemetry/config/telem.yaml` is the default config
-  - `makerspet_loki/config/telem.yaml` is the custom config for the Loki robot model
-  - `makerspet_fido/config/telem.yaml` is the custom config for the Fido robot model
-  - `makerspet_snoopy/config/telem.yaml` is the custom config for the Snoopy robot model
-
-### 1/28/2024
-- `docker pull kaiaai/kaiaai-ros-dev:humble-01-28-2024`
-- `docker pull kaiaai/kaiaai-ros-dev:iron-01-28-2024`
-- added YDLIDAR X2 to kaiaai_telemetry
-- Arduino firmware moved to https://github.com/kaiaai/firmware
-
-### 1/21/2024
-- `docker pull kaiaai/kaiaai-ros-dev:humble-01-21-2024`
-- `docker pull kaiaai/kaiaai-ros-dev:iron-01-21-2024`
-- kaiaai_telemetry now supports multiple laser distance scan sensor models
-  - added Xiaomi 1st gen LDS02RR LDS; YDLIDAR X4 is default
-  - updated config/telem.yaml settings in makerspet_loki/fido/snoopy
-  - `ros2 launch kaiaai_bringup physical.launch.py robot_model:=makerspet_loki lds_model:=LDS02RR`
-  - `ros2 launch kaiaai_bringup physical.launch.py robot_model:=makerspet_loki lds_model:=YDLIDAR-X4`
-- Frontier exploration works, but needs debug
-  - `ros2 launch explore_lite explore.launch.py`
-
-### 12/11/2023
-- `docker pull kaiaai/kaiaai-ros-dev:humble-2023-12-11`
-- `docker pull kaiaai/kaiaai-ros-dev:iron-2023-12-11`
-- increased map saver timeout
-- Nav2 SLAM works in physical robot and in simulation
-  - `ros2 launch kaiaai_bringup navigation.launch.py robot_model:=makerspet_loki slam:=True`
-- kaiaai_teleop bugfix missing setup file
