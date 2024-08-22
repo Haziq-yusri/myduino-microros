@@ -35,14 +35,14 @@ ros-$ROS_DISTRO-joint-state-publisher ros-$ROS_DISTRO-xacro \
 &&  rm -rf /var/lib/apt/lists/*
 
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
-&&  git clone -b $ROS_DISTRO --depth 1 https://github.com/kaiaai/kaiaai_msgs src/kaiaai_msgs \
-&&  git clone -b $ROS_DISTRO --depth 1 https://github.com/kaiaai/kaiaai src/kaiaai \
+&&  git clone -b $ROS_DISTRO --depth 1 https://github.com/Haziq-yusri/micro_ros_msgs src/micro_ros_msgs \
+&&  git clone -b $ROS_DISTRO --depth 1 https://github.com/Haziq-yusri/micro_ros src/micro_ros \
 &&  git clone -b $ROS_DISTRO --depth 1 https://github.com/makerspet/makerspet_fido src/makerspet_fido \
 &&  git clone -b $ROS_DISTRO --depth 1 https://github.com/makerspet/makerspet_loki src/makerspet_loki \
 &&  git clone -b $ROS_DISTRO --depth 1 https://github.com/makerspet/makerspet_snoopy src/makerspet_snoopy \
 &&  git clone -b $ROS_DISTRO --depth 1 https://github.com/makerspet/makerspet_mini src/makerspet_mini \
-&&  git clone -b $ROS_DISTRO --depth 1 https://github.com/kaiaai/kaiaai_simulations src/kaiaai_simulations \
-&&  git clone --depth 1 https://github.com/kaiaai/kaiaai_cli src/kaiaai_cli \
+&&  git clone -b $ROS_DISTRO --depth 1 https://github.com/Haziq-yusri/micro_ros_simulations src/micro_ros_simulations \
+&&  git clone --depth 1 https://github.com/Haziq-yusri/micro_ros_cli src/micro_ros_cli \
 &&  git clone --depth 1 https://github.com/kaiaai/kaiaai_python src/kaiaai_python \
 &&  git clone --depth 1 https://github.com/kaiaai/m-explore-ros2 src/m-explore-ros2 \
 &&  colcon build --symlink-install \
@@ -53,7 +53,8 @@ RUN echo ". /opt/ros/$ROS_DISTRO/setup.bash" >> ~/.bashrc
 RUN echo ". /uros_ws/install/setup.bash" >> ~/.bashrc
 RUN echo ". /ros_ws/install/setup.bash" >> ~/.bashrc
 # RUN echo "export KAIAAI_ROBOT=makerspet_snoopy" >> ~/.bashrc
-RUN echo "alias kaia='ros2 run kaiaai_cli cli'" >> ~/.bashrc
+#RUN echo "alias kaia='ros2 run kaiaai_cli cli'" >> ~/.bashrc
+RUN echo "alias myduino='ros2 run micro_ros_cli cli'" >> ~/.bashrc
 
 RUN rm /*.sh
 COPY ./kaiaai-entrypoint.sh /
