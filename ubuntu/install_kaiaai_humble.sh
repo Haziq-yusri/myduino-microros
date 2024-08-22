@@ -35,7 +35,7 @@ pip3 install aiortc aiohttp opencv-python
 sudo apt autoremove -y
 # sudo rm -rf /var/lib/apt/lists/*
 
-git clone -b humble --depth 1 https://github.com/kaiaai/kaiaai_msgs src/kaiaai_msgs
+git clone -b humble --depth 1 https://github.com/Haziq-yusri/micro_ros_msgs src/micro_ros_msgs
 git clone -b humble --depth 1 https://github.com/kaiaai/kaiaai src/kaiaai
 git clone -b humble --depth 1 https://github.com/makerspet/makerspet_fido src/makerspet_fido
 git clone -b humble --depth 1 https://github.com/makerspet/makerspet_loki src/makerspet_loki
