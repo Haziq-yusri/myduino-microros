@@ -1,6 +1,8 @@
 # Microros Docker images
 
-[Kaia.ai](https://kaiaai) is a platform for 3D-printable pet robots. Please sign up for an early launch invite [here](https://remake.ai).
+This platform is for robot training classes using microros. We forked from the kaiaai repository where he and their team have organised the microros using the docker platform for ESP32 microcontroller. 
+
+If you want to know more about us, just click the link [here](https://myduino.com/).
 
 Questions? Please visit the [Support Forum](https://github.com/makerspet/support/discussions/)!
 
